@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Master - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="techZone" title="Click for random color!">
+        <i class="fa-solid fa-palette"></i> Random BG
+        <button type="button" id="techBtn">?</button>
+    </div>
+
+    <div class="container" id="mainContainer">
+        
+        <div class="form-box login">
+            <form id="loginForm">
+                <h2><i class="fa-solid fa-chess-king"></i> Welcome Back</h2>
+                
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" id="loginEmail" required placeholder=" ">
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="loginPass" required placeholder=" ">
+                    <label>Password</label>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <form id="registerForm">
+                <h2><i class="fa-solid fa-chess-knight"></i> Join the Board</h2>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" id="regUser" required placeholder=" ">
+                    <label>Username</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" id="regEmail" required placeholder=" ">
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="regPass" required placeholder=" ">
+                    <label>Password</label>
+                </div>
+
+                <div id="password-validation-box">
+                    <p>Password must contain:</p>
+                    <ul>
+                        <li id="rule-length" class="invalid"><i class="fa-solid fa-circle-xmark"></i> At least 8 characters</li>
+                        <li id="rule-upper" class="invalid"><i class="fa-solid fa-circle-xmark"></i> Uppercase Letter (A-Z)</li>
+                        <li id="rule-number" class="invalid"><i class="fa-solid fa-circle-xmark"></i> One Number (0-9)</li>
+                        <li id="rule-special" class="invalid"><i class="fa-solid fa-circle-xmark"></i> Special Char (!@#$%)</li>
+                    </ul>
+                </div>
+
+                <div class="setting-box">
+                    <label>Skill Level (ELO): <span id="eloValue">1200</span></label>
+                    <input type="range" id="regElo" min="400" max="3000" value="1200" step="50">
+                </div>
+
+                <div class="setting-box radio-group">
+                    <label>Gender:</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="gender" value="Male" checked> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                    </div>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox" id="regTerms" required> I agree to the terms</label>
+                </div>
+
+                <button type="submit" class="btn">Register & Play</button>
+
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="errorContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

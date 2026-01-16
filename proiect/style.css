@@ -1,0 +1,136 @@
+:root {
+    --dark-sq: #769656;  
+    --light-sq: #eeeed2; 
+    --dark-text: #2b2b2b;
+    --light-text: #fff;
+    --error-red: #d9534f;
+    --success-green: #5cb85c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--dark-sq), #536b3d);
+    transition: background 0.5s ease;
+}
+
+
+#techZone {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+#techZone:hover { transform: scale(1.05); background: rgba(255, 255, 255, 0.3); }
+#techBtn { background: #333; color: #fff; border: none; width: 25px; height: 25px; border-radius: 50%; cursor: help; }
+
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 500px; 
+    background: var(--light-sq);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height .3s ease;
+}
+
+.form-box { width: 100%; padding: 40px; }
+.form-box.register { display: none; }
+
+h2 { font-size: 2em; color: var(--dark-text); text-align: center; margin-bottom: 20px;}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--dark-text);
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: var(--dark-text);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label { top: -5px; }
+
+.input-box input {
+    width: 100%; height: 100%; background: transparent; border: none; outline: none;
+    font-size: 1em; color: var(--dark-text); font-weight: 600; padding: 0 35px 0 5px;
+}
+
+.input-box .icon { position: absolute; right: 8px; font-size: 1.2em; color: var(--dark-text); line-height: 57px; }
+
+.btn {
+    width: 100%; height: 45px; background: var(--dark-sq); border: none; outline: none;
+    border-radius: 6px; cursor: pointer; color: var(--light-text); font-weight: 500;
+    margin-top: 10px; transition: background 0.3s;
+}
+.btn:hover { background: #5a7541; }
+
+.login-register { text-align: center; margin-top: 15px; }
+.login-register a { color: var(--dark-text); font-weight: 600; text-decoration: none; }
+.login-register a:hover { text-decoration: underline; }
+
+.remember-forgot { display: flex; justify-content: space-between; margin: -15px 0 15px; }
+.remember-forgot a { color: var(--dark-text); text-decoration: none; }
+
+.setting-box { margin: 15px 0; color: var(--dark-text); }
+input[type=range] { width: 100%; }
+.radio-options { display: flex; gap: 20px; margin-top: 5px;}
+#errorContainer {
+    position: fixed; top: 20px; right: 20px; z-index: 2000;
+    display: flex; flex-direction: column; gap: 10px;
+}
+.msg-alert {
+    background: #ffdddd; border-left: 6px solid var(--error-red);
+    color: #333; padding: 15px; min-width: 250px; border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: slideIn 0.5s ease-out;
+}
+@keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; }}
+
+#password-validation-box {
+    !background: rgba(255, 234, 129, 0.9);
+    padding: 10px; border-radius: 8px; margin-bottom: 20px;
+    font-size: 0.85em; color: #333; display: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+#password-validation-box ul { list-style: none; padding-left: 5px; }
+#password-validation-box li { margin: 5px 0; display: flex; align-items: center; gap: 8px; }
+
+.invalid { color: var(--error-red); }
+.valid { color: var(--success-green); font-weight: bold; }
+.valid i::before { content: "\f058"; }
